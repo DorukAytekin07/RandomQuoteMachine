@@ -1,0 +1,64 @@
+.quote-div{
+    width: 50vw;
+    height: 50vh;
+    gap: 1rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    background-color: #0d0d0d;
+    padding: 7%;
+    border-radius: 2%;
+}
+.center{
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+.right{
+   position: absolute;
+   left: auto;
+   bottom: 5%;
+}
+.quote-p{
+    text-wrap: wrap;
+}
+.button{
+    background-color: aliceblue;
+    color: #0d0d0d;
+    border: none;
+    box-shadow: 1px;
+    padding: 10px;
+    margin-top: 100px;
+    border-radius: 2%;
+}
+@media screen and (max-width: 760px) {
+    .quote-div{
+        width: 63vw;
+        height: 43vh;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        background-color: #0d0d0d;
+        padding: 5%;
+        border-radius: 2%;
+    }
+}
+@media screen and (max-width: 450px) {
+    .quote-div{
+        width: 70vw;
+        height: 30vh;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #0d0d0d;
+        padding: 5%;
+        border-radius: 2%;
+    }
+    .right{
+        left: auto;
+        font-size: 0.8rem;
+    }
+    .button{
+        padding: 8px;
+    }
+}
