@@ -7,7 +7,7 @@ export default class Quote extends React.Component {
         super(props);
         this.state = {
             quote:Quotes.quotes[0].quote,
-            owner:Quotes.quotes[0].owner
+            author:Quotes.quotes[0].author
         }
         this.handleClick = this.handleClick.bind(this);
     }
@@ -17,7 +17,7 @@ export default class Quote extends React.Component {
         if(this.lastIndex != index){
             this.setState({
                 quote:Quotes.quotes[index].quote,
-                owner:Quotes.quotes[index].owner
+                author:Quotes.quotes[index].author
             })   
         }
         else{
@@ -34,7 +34,7 @@ export default class Quote extends React.Component {
             this.setState({
             
                 quote:Quotes.quotes[index].quote,
-                owner:Quotes.quotes[index].owner
+                author:Quotes.quotes[index].author
             })  
         }   
         this.lastIndex = index;
@@ -46,7 +46,7 @@ export default class Quote extends React.Component {
         return(
             <div className="quote-div">
                 <p className="center quote-p">{this.state.quote}</p>
-                <p className="center">{this.state.owner}</p>
+                <p className="center">{this.state.author}</p>
                 <button  className="right button" onClick={this.handleClick}>New Quote</button>
             </div>
         );
