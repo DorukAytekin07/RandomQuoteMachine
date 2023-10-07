@@ -1,7 +1,8 @@
 import React from "react";
 import Quotes from "../src/Quotes.json"
 export default class Quote extends React.Component {
-    
+    //renk ayarlamasini yap rengini degistirmek istedin seylere bi class var color diye onu 
+    //javascript document ile cek ve icindeki color rengini degistirmek istefigin renge ver
     constructor(props) {
         let lastIndex = 0;
         super(props);
@@ -15,13 +16,13 @@ export default class Quote extends React.Component {
         let index = Math.floor(Math.random() * Quotes.quotes.length);
         console.log("index"+index)
         if(this.lastIndex != index){
+            
             this.setState({
                 quote:Quotes.quotes[index].quote,
                 author:Quotes.quotes[index].author
             })   
         }
         else{
-            console.log("buraya girdi");
             if(index == 0){
                 index += 1;
             }
@@ -32,7 +33,6 @@ export default class Quote extends React.Component {
                 index+=1
             }
             this.setState({
-            
                 quote:Quotes.quotes[index].quote,
                 author:Quotes.quotes[index].author
             })  
@@ -44,11 +44,17 @@ export default class Quote extends React.Component {
         console.log("lastindex"+this.lastIndex)
         
         return(
-            <div className="quote-div">
-                <p className="center quote-p">{this.state.quote}</p>
-                <p className="center">{this.state.author}</p>
-                <button  className="right button" onClick={this.handleClick}>New Quote</button>
+            <div >
+              <h1 className="center title">Random Quote Machine</h1>
+              <br />
+              <p className="center developer">Developed By Doruk Aytekin</p>
+                <div className="quote-div">
+                    <p className="center quote-p">{this.state.quote}</p>
+                    <p className="center">{this.state.author}</p>
+                    <button  className="right button" onClick={this.handleClick}>New Quote</button>
+                </div>  
             </div>
+            
         );
     }
 }
